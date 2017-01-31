@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>MobiCampus</title>
+<link href="jquery-mobile/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css">
+<link href="jquery-mobile/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css">
+<link href="styles/custom.css" rel="stylesheet" type="text/css">
+<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script src="cordova.js" type="text/javascript"></script>
+<script type="text/javascript">
+			 $("#page").live('pagebeforeshow', function (e, ui) {          
+            setTimeout($.mobile.showPageLoadingMsg, 5);                      
+});
+ $("#page").live('pageshow', function (e, ui) {          
+            setTimeout($.mobile.hidePageLoadingMsg, 5);                      
+});
+		 $("#links").live('pagebeforeshow', function (e, ui) {          
+            setTimeout($.mobile.showPageLoadingMsg, 8);                      
+});
+ $("#links").live('pageshow', function (e, ui) {          
+            setTimeout($.mobile.hidePageLoadingMsg, 5);                      
+});
+  $(".a").live("click",function(){
+            $.mobile.showPageLoadingMsg();
+            setTimeout(function(){$.mobile.hidePageLoadingMsg()},2000);
+        });
+		
+	
+			</script>
+</head>
+<body>
+<div data-role="page" id="page" data-theme="c" data-content-theme="c">
+	<div data-role="header" data-theme="c" data-content-theme="c">
+	  <h2 align="justify">
+	  <strong>MobiCampus</strong></h2>
+    <img src="images/GRIETArialView.jpg" height="140" width="310" alt="GRIET mobile" longdesc="http://www.griet.ac.in" style="float:left;display:inline" > </div>
+    <div class="ui-grid-d">	
+    <h2 id="logo">
+    
+		<div align="justify">
+		  <ul class="ui-grid-b" data-role="listview" data-theme="c">
+		    <li><a href="news.html" rel="external" class="a"><img src="images/news_logo.png" width="311" height="274" alt="News">News</a></li>
+		    <li><a href="events.html" rel="external" class="a"><img src="images/events.jpg" width="135" height="135" alt="events">Events</a></li>
+		    <li ><a href="geo.html" rel="external" class="a"><img src="images/maps.jpg" width="204" height="204" alt="maps">Maps</a></li>
+		    <li><a href="contact.html" rel="external" class="a"><img src="images/contact.jpg" width="238" height="212" alt="contacts">Contact</a></li>
+		    <li><a href="#links"><img src="images/links.jpg" width="160" height="160" alt="links" id="a">Links</a></li>
+	      </ul>		
+	  </div>
+    </div>
+    <div data-role="footer" data-theme="c" data-content-theme="c">
+	  <h4 align="justify">MobiCampus&copy;2012</h4>
+	</div>
+</div>
+
+<div data-role="page" id="links">
+	<div data-role="header">
+    <a href="index.html" data-icon="back">back</a>
+		<h1>Links</h1>
+	</div>
+	<div data-role="content">	
+		    <div class="ui-grid-b">	
+   <h2 id="logo">
+		<ul class="ui-grid-b" data-role="listview" >
+<li><a href="http://www.griet.ac.in/" rel="external">College main site</a></li>
+<li><a href="http://gem.griet.ac.in/" rel="external">college e-magazine</a></li>
+<li><a href="http://203.217.146.76/griet/" rel="external">college portal</a></li>
+<li><a href="http://grietmobile.wordpress.com/" rel="external">GRIET mobile blog</a></li>
+
+		</ul>		
+	</div>
+	</div>
+   <div data-role="footer" data-theme="c" data-content-theme="c">
+	  <h4 align="justify">MobiCampus&copy;2012</h4>
+	</div>
+</div>
+</body>
+</html>

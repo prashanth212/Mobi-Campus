@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>event feed back</title>
+<link href="jquery-mobile/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css">
+<link href="jquery-mobile/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css">
+<link href="styles/custom.css" rel="stylesheet" type="text/css">
+<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script src="scripts/eventfeed.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+					 $("#page").live('pagebeforeshow', function (e, ui) {          
+            setTimeout($.mobile.showPageLoadingMsg, 8);                      
+});
+ $("#page").live('pageshow', function (e, ui) {          
+            setTimeout($.mobile.hidePageLoadingMsg, 5);                      
+})
+	
+</script>
+</head>
+<body>
+<div data-role="page" id="page" data-theme="c" data-content-theme="c">
+<div data-role="header" data-theme="c" data-backbtn="false">
+  <a href="contact.html" data-icon="back">back</a>
+  <h1> Event feedback </h1>
+</div>
+  <div data-role="content" data-theme="c" data-content-theme="c">
+    <form  method="post" enctype="multipart/form-data" name="reportForm" action="#">
+   	  <div data-role="rollno">
+	    <label for="rollno">
+	      <div align="justify">Enter your registration no: </div>
+	    </label>
+	    <div align="justify">
+	      <input type="text" name="rollno" id="rollno" value="" maxlength="10" width="10" size="10" max="10" />
+        </div>
+	    <div data-role="fieldcontain">
+	      <label for="Events" class="select">Events:</label>
+	      <select name="selectmenu" id="eve">
+	            <option value="">Select your Event</option>
+           <option  value="ICMPC">ICMPC</option>
+        <option value="Pulse">pulse</option>
+        <option  value="Pragnya">pragnya</option>
+        <option  value="Spices">Spices</option>
+        <option  value="Ruedo">Ruedo</option>
+        <option   value="Graduation day">Graduation day</option>
+          </select>
+      </div>
+	    <div data-role="fieldcontain">
+	      <label for="comment">Feedback:</label>
+	      <textarea cols="40" rows="8" name="textarea" id="comment"></textarea>
+      </div>
+	    <input type="submit" value="Submit" id="submit" data-icon="star" />
+    </form>
+</div>
+
+<div data-role="footer" data-theme="c" data-content-theme="c" >
+	  <h4 align="justify">MobiCampus&copy;2012</h4>
+	</div>
+
+
+</div>
+</body>
+</html>
